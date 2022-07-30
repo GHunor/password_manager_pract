@@ -1,10 +1,12 @@
 def view():
-    pass
+    with open('passwords.txt', 'r') as f:
+        for line in f.readlines():
+            print(line.rstrip())
 def add():
     addrs = input("Address: ")
     pwrd = input("Password: ")
 
-    with open(passwords.txt, 'a') as f:
+    with open('passwords.txt', 'a') as f:
         f.write(addrs + "|" + pwrd + "\n")
 
 mpwrd = input("Please give me the master password")
